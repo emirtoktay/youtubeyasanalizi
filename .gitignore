@@ -1,0 +1,29 @@
+# Python sanal ortam klasörü
+.venv/
+venv/
+env/
+
+# Python derleme dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Büyük Model Dosyaları (GitHub sınırı nedeniyle)
+*.pt
+*.h5
+*.pkl
+*.bin
+*.weights
+
+# Klasör bazlı modeller
+turkish_toxic_bert_model/
+downloads/
+
+# IDE Ayarları
+.idea/
+.vscode/
+
+# İşletim sistemi dosyaları
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,122 @@
+:root {
+    --bg: #070707;
+    --panel: #0f0f0f;
+    --accent: #c62828; /* strong red */
+    --muted: #9aa0a6;
+    --card: #111111;
+}
+
+/* Reset basics */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+    background: linear-gradient(180deg, var(--bg), #0b0b0b);
+    color: #e6e6e6;
+    min-width: 320px;
+    width: 360px;
+    padding: 14px;
+}
+
+.container { display: flex; flex-direction: column; gap: 12px; }
+.header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 6px; }
+.brand { font-size: 1rem; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+.brand-text { font-weight: 700; color: #fff; }
+
+.status {
+    padding: 10px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(198,40,40,0.06), rgba(0,0,0,0.1));
+    border: 1px solid rgba(198,40,40,0.18);
+    color: var(--muted);
+    font-size: 0.95rem;
+    text-align: center;
+}
+.status.success { color: #b7f0b7; border-color: rgba(0,200,80,0.12); }
+.status.error { color: #ffb4b4; border-color: rgba(255,0,0,0.12); }
+.error { color: #ff8a8a; }
+.success { color: #a8e6a1; }
+
+.footer { font-size: 0.75rem; color: var(--muted); text-align: center; padding-top: 6px; }
+
+/* =========================================
+   YENİ: YUVARLAK GÖSTERGE VE ANİMASYON
+   ========================================= */
+.result-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    min-height: 150px;
+}
+
+/* Standart Yuvarlak Tasarımı (Karanlık Temaya Uygun) */
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 6px solid #222; /* Boşta beklerken koyu gri çizgi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #fff;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Derinlik hissi */
+}
+
+/* ⏳ Yükleme Animasyonu */
+.circle.loading {
+    border-top-color: var(--accent); /* Dönen kırmızı kısım */
+    animation: spin 1s linear infinite;
+}
+
+/* Dönme Efekti */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.circle.age-18 { 
+    border-color: #f44336; 
+    color: #f44336; 
+    background: rgba(244, 67, 54, 0.08); 
+    text-shadow: 0 0 10px rgba(244, 67, 54, 0.6);
+}
+.circle.age-15 { 
+    border-color: #ff9800; 
+    color: #ff9800; 
+    background: rgba(255, 152, 0, 0.08); 
+    text-shadow: 0 0 10px rgba(255, 152, 0, 0.6);
+}
+.circle.age-13 { 
+    border-color: #f1c40f; 
+    color: #f1c40f; 
+    background: rgba(241, 196, 15, 0.08); 
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.6);
+}
+.circle.age-9 { 
+    border-color: #3498db; 
+    color: #3498db; 
+    background: rgba(52, 152, 219, 0.08); 
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+}
+
+.circle.age-all { 
+    border-color: #4caf50; 
+    color: #4caf50; 
+    background: rgba(76, 175, 80, 0.08); 
+    font-size: 18px; /* Yazı uzun olduğu için fontu küçülttük */
+    text-align: center;
+    padding: 10px;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+}
+
+/* Küçük ekranlar için ayarlamalar */
+@media (max-width: 360px) {
+    body { padding: 10px; width: 320px; }
+    .circle { width: 100px; height: 100px; font-size: 28px; }
+    .circle.age-all { font-size: 16px; }
+}
