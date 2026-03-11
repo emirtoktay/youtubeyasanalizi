@@ -9,9 +9,6 @@ __pycache__/
 *$py.class
 
 # Büyük Model Dosyaları (GitHub sınırı nedeniyle)
-*.pt
-*.h5
-*.pkl
 *.bin
 *.weights
 
@@ -27,3 +24,5 @@ downloads/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+db_manager.py/
